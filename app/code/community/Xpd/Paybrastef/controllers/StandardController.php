@@ -39,10 +39,10 @@ class Xpd_Paybrastef_StandardController extends Mage_Core_Controller_Front_Actio
         $session->unsUrlRedirect();
         
         if($paybras->getEnvironment() == '1') {
-            $url = 'https://service.paybras.com/payment/api/criaTransacao';
+            $url = 'https://service.embrapag.com/payment/api/criaTransacao';
         }
         else {
-            $url = 'https://sandbox.paybras.com/payment/api/criaTransacao';
+            $url = 'https://sandbox.embrapag.com/payment/api/criaTransacao';
         }
         
         $orderId = $order->getId();
@@ -193,10 +193,10 @@ class Xpd_Paybrastef_StandardController extends Mage_Core_Controller_Front_Actio
 				$paybras->log($order->getId());
 				
                 if($paybras->getEnvironment() == '1') {
-                    $url = 'https://service.paybras.com/payment/getStatus';
+                    $url = 'https://service.embrapag.com/payment/getStatus';
                 }
                 else {
-                    $url = 'https://sandbox.paybras.com/payment/getStatus';
+                    $url = 'https://sandbox.embrapag.com/payment/getStatus';
                 }
                 
                 $fields = array(
