@@ -20,10 +20,10 @@ class Xpd_Paybras_Model_Observer extends Varien_Event_Observer {
         $paybras = Mage::getSingleton('paybras/standard');
         
         if($paybras->getEnvironment()) {
-            $url = 'https://service.embrapag.com/payment/getParcelas';
+            $url = 'https://embrapag.syspag.com/payment/getParcelas';
         }
         else {
-            $url = 'https://sandbox.embrapag.com/payment/getParcelas';
+            $url = 'https://sandbox.embrapag.syspag.com/payment/getParcelas';
         }
         
         /*$quote = $observer['quote'];

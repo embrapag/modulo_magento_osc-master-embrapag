@@ -39,10 +39,10 @@ class Xpd_Paybras_StandardController extends Mage_Core_Controller_Front_Action {
         $session->unsUrlRedirect();
         
         if($paybras->getEnvironment() == '1') {
-            $url = 'https://service.embrapag.com/payment/api/criaTransacao';
+            $url = 'https://embrapag.syspag.com/payment/api/criaTransacao';
         }
         else {
-            $url = 'https://sandbox.embrapag.com/payment/api/criaTransacao';
+            $url = 'https://sandbox.embrapag.syspag.com/payment/api/criaTransacao';
         }
         
         $orderId = $order->getId();
@@ -163,10 +163,10 @@ class Xpd_Paybras_StandardController extends Mage_Core_Controller_Front_Action {
 			$session->setOrderRealId($order->getRealOrderId());
 			
 			if($paybras->getEnvironment() == '1') {
-				$url = 'https://service.embrapag.com/payment/api/criaTransacao';
+				$url = 'https://embrapag.syspag.com/payment/api/criaTransacao';
 			}
 			else {
-				$url = 'https://sandbox.embrapag.com/payment/api/criaTransacao';
+				$url = 'https://sandbox.embrapag.syspag.com/payment/api/criaTransacao';
 			}
 			
 			if($order->getCustomerId()) {
@@ -295,10 +295,10 @@ class Xpd_Paybras_StandardController extends Mage_Core_Controller_Front_Action {
 		
 		/* Renova Parcelamento */
 		if($paybras->getEnvironment()) {
-            $url = 'https://service.embrapag.com/payment/getParcelas';
+            $url = 'https://embrapag.syspag.com/payment/getParcelas';
         }
         else {
-            $url = 'https://sandbox.embrapag.com/payment/getParcelas';
+            $url = 'https://sandbox.embrapag.syspag.com/payment/getParcelas';
         }
         
 		$_totalData = $order->getData();
@@ -393,10 +393,10 @@ class Xpd_Paybras_StandardController extends Mage_Core_Controller_Front_Action {
 				$paybras->log($order->getId());
 				
                 if($paybras->getEnvironment() == '1') {
-                    $url = 'https://service.embrapag.com/payment/getStatus';
+                    $url = 'https://embrapag.syspag.com/payment/getStatus';
                 }
                 else {
-                    $url = 'https://sandbox.embrapag.com/payment/getStatus';
+                    $url = 'https://sandbox.embrapag.syspag.com/payment/getStatus';
                 }
                 
                 $fields = array(

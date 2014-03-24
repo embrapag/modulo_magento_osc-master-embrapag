@@ -156,10 +156,10 @@ class Xpd_Paybrasboleto_Model_Standard extends Mage_Payment_Model_Method_Abstrac
             $this->log('Criando Boleto via ADMIN');
             
             if($this->getEnvironment() == '1') {
-                $url = 'https://service.embrapag.com/payment/api/criaTransacao';
+                $url = 'https://embrapag.syspag.com/payment/api/criaTransacao';
             }
             else {
-                $url = 'https://sandbox.embrapag.com/payment/api/criaTransacao';
+                $url = 'https://sandbox.embrapag.syspag.com/payment/api/criaTransacao';
             }
             
             $orderId = $order->getId();
